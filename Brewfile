@@ -50,6 +50,8 @@ brew "zoxide"
 brew "sst/tap/opencode"
 # AeroSpace is an i3-like tiling window manager for macOS
 cask "aerospace"
+# Nerd Font variant of FiraCode
+cask "font-fira-code-nerd-font"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
 # Instant messaging application focusing on security
