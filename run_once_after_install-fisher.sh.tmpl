@@ -1,0 +1,30 @@
+#!/bin/bash
+
+set -e
+
+echo "🐟 Setting up Fisher and Fish plugins..."
+
+# Check if fish is installed
+if ! command -v fish &> /dev/null; then
+    echo "⚠️  Fish shell not found. Skipping Fisher installation."
+    exit 0
+fi
+
+# Install Fisher if not already installed
+if ! fish -c "type -q fisher" &> /dev/null; then
+    echo "📦 Installing Fisher..."
+    fish -c "curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher"
+else
+    echo "✅ Fisher is already installed"
+fi
+
+# Update Fisher and install plugins from fish_plugins file
+if [ -f "$HOME/.config/fish/fish_plugins" ]; then
+    echo "📦 Installing Fish plugins..."
+    fish -c "fisher update"
+    echo "✅ Fish plugins installed successfully!"
+else
+    echo "⚠️  Warning: fish_plugins file not found"
+fi
+
+echo "🎉 Fish setup complete!"

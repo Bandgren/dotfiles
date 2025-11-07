@@ -1,0 +1,19 @@
+
+
+###########
+## shell ##
+###########
+command = /opt/homebrew/bin/fish --login --interactive
+
+#################
+## UI / window ##
+#################
+bold-is-bright = true
+macos-titlebar-style = hidden
+macos-window-shadow = false
+mouse-hide-while-typing = true
+
+font-family = "FiraCode Nerd Font Mono"
+theme = Catppuccin Macchiato
+
+background-opacity = 1
